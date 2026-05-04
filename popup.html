@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Open Tab Transfer</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Open Tab Transfer</h1>
+      <label><input id="allWindows" type="checkbox" /> Export all windows</label>
+      <label><input id="encrypt" type="checkbox" checked /> Encrypt export with passphrase</label>
+      <label>Export chunk size <input id="exportChunkSize" type="number" min="1" value="100" /></label>
+      <button id="exportBtn">Export Tabs</button>
+      <hr />
+      <label for="importFile">Import JSON file</label>
+      <input id="importFile" type="file" accept="application/json,.json" />
+      <label><input id="importEncrypted" type="checkbox" checked /> File is encrypted</label>
+      <label><input id="dedupe" type="checkbox" checked /> Dedupe URLs on import</label>
+      <label>Import batch size <input id="importBatchSize" type="number" min="1" value="25" /></label>
+      <button id="importBtn">Import Tabs</button>
+      <p id="status" role="status"></p>
+    </main>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
